@@ -51,6 +51,7 @@
 
 
 const express = require('express');
+require('dotenv').config(); 
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const path = require('path'); // <-- Important
