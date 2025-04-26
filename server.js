@@ -58,12 +58,19 @@ const app = express();
 const port = 3000;
 
 // MySQL connection configuration
+// const db = mysql.createConnection({
+//     host: 'localhost',  
+//     user: 'root',        
+//     password: 'MySecure@123',  
+//     database: 'node',   
+// });
 const db = mysql.createConnection({
-    host: 'localhost',  
-    user: 'root',        
-    password: 'MySecure@123',  
-    database: 'node',   
+  host: process.env.DB_HOST,  
+  user: process.env.DB_USER,        
+  password: process.env.DB_PASSWORD,  
+  database: process.env.DB_NAME,   
 });
+
 
 // Connect to MySQL
 db.connect(err => {
